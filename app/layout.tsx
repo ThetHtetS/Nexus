@@ -15,7 +15,7 @@ export default function RootLayout({ children }: Props) {
     <StoreProvider>
       <html lang="en">
         <body>
-          <section className={styles.container}>
+          {/* <section className={styles.container}>
             <Nav />
 
             <header className={styles.header}>
@@ -26,11 +26,11 @@ export default function RootLayout({ children }: Props) {
                 width={100}
                 height={100}
               />
-            </header>
+            </header> */}
 
             <main className={styles.main}>{children}</main>
 
-            <footer className={styles.footer}>
+            {/* <footer className={styles.footer}>
               <span>Learn </span>
               <a
                 className={styles.link}
@@ -76,8 +76,9 @@ export default function RootLayout({ children }: Props) {
               >
                 Reselect
               </a>
-            </footer>
+            </footer> 
           </section>
+          */}
         </body>
       </html>
     </StoreProvider>
