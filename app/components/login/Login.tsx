@@ -3,25 +3,27 @@ import {
     login ,
     selectUser 
   } from "@/lib/features/login/authSlice";
-  
+
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 // import {  useDispatch } from '@/lib/redux';
+import { useRouter } from "next/navigation";
 
 export default function Login() {
     const dispatch = useAppDispatch();
-    const user = useAppSelector(selectUser)
-    console.log(user, "user");
-    ;
+    const router = useRouter();
+   
   const signIN =(values, setSubmitting,resetForm) => {
         console.log(values)
         dispatch(login(values))
-        resetForm();
+        router.push('/ratelist')
+       // resetForm();
+
   }
     
   return (
-    <div className="grid place-items-center h-screen">
+    <div className="py-28">
       <div className="md:w-full">
         <Formik
           initialValues={{ email: '', password: '' }}
@@ -34,7 +36,7 @@ export default function Login() {
           {({ isSubmitting }) => (
             <Form className="space-y-8">
               <div className="text-center mb-5">
-                <span className="text-3xl font-bold"> Login </span>
+                <span className="text-3xl text-primary"> Login </span>
               </div>
               <div className="mb-5">
                 <Field
@@ -64,7 +66,7 @@ export default function Login() {
 
               <div className="w-full">
                 <button
-                  className="border bg-black text-white rounded-lg px-3 py-1 w-full"
+                  className="border bg-primary text-white rounded-lg px-3 py-1 w-full"
                   type="submit"
                   disabled={isSubmitting}
                 >

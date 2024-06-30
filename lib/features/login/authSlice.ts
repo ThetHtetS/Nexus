@@ -4,13 +4,16 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 //import { fetchCount } from "./counterAPI";
 
 export interface authSliceState {
-  email: String;
-  password: String
+ user: 
+  {email: String;
+    password: String
+    }
+ 
 }
 
 const initialState: authSliceState = {
-  email: '',
-  password: '',
+ user: {
+ }
 };
 
 // If you are not using async thunks you can use the standalone `createSlice`.
@@ -26,7 +29,7 @@ export const authSlice = createAppSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       console.log(action.payload, "payload")
-      state = action.payload
+      state.user = action.payload
     }),
     // decrement: create.reducer((state, action: PayloadAction<number>) => {
     //   state.value -= 1;

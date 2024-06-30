@@ -11,28 +11,28 @@ export interface rateData {
 export interface rateSliceState {
   data: rateData[]
 }
-
+let date = new Date();
 const initialState: rateSliceState = {
  data: [
   {
   currency: "USD",
   exchangeRate: 4402.05,
-  date: new Date()
+   date
  },
  {
   currency: "THB",
   exchangeRate: 109.05,
-  date: new Date()
+  date
  },
  {
   currency: "SGD",
   exchangeRate: 3200,
-  date: new Date()
+  date
  },
  {
   currency: "MMK",
   exchangeRate: 1,
-  date: new Date()
+  date
  },
 
 ]
