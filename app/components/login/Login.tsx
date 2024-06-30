@@ -7,15 +7,13 @@ import {
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-// import {  useDispatch } from '@/lib/redux';
 import { useRouter } from "next/navigation";
 
 export default function Login() {
     const dispatch = useAppDispatch();
     const router = useRouter();
    
-  const signIN =(values, setSubmitting,resetForm) => {
-        console.log(values)
+  const signIN =(values: Object) => {
         dispatch(login(values))
         router.push('/ratelist')
        // resetForm();
@@ -29,7 +27,7 @@ export default function Login() {
           initialValues={{ email: '', password: '' }}
           
           onSubmit={(values, { setSubmitting, resetForm }) => {
-            signIN(values, setSubmitting, resetForm);
+            signIN(values);
          
         }}
         >

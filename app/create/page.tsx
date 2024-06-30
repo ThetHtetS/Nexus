@@ -16,10 +16,9 @@ export default function Create() {
             router.push('/')    
         }
     },[])
-    const create =(values, setSubmitting,resetForm) => {
+    const create =(values: Object) => {
           console.log(values)
           dispatch(addData(values))
-          resetForm();
           router.push('/ratelist');
     }
       
@@ -39,8 +38,8 @@ export default function Create() {
         <Formik
           initialValues={{exchangeRate: '', currency: 'USD', date: new Date()}}
           
-          onSubmit={(values, { setSubmitting, resetForm }) => {
-            create(values, setSubmitting, resetForm);
+          onSubmit={(values: object) => {
+            create(values);
             }}>
           {({ isSubmitting }) => (
             <Form className="space-y-8">
