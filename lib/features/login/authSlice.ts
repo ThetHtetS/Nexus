@@ -74,7 +74,7 @@ export const authSlice = createAppSlice({
 });
 
 //Action creators are generated for each case reducer function.
-export const { login } =authSlice.actions;
+export const { login } = authSlice.actions;
 
 // Selectors returned by `slice.selectors` take the root state as their first argument.
 export const { selectUser } = authSlice.selectors;
