@@ -11,7 +11,9 @@ export default function ratelist() {
   const exchangeRate = useAppSelector(selectRate);
   const user = useAppSelector(selectUser)
   const router = useRouter();
-  ////test branch test thet htet soe
+
+  ////test branch             test thura
+
   useEffect(()=> {
       if (!user.user.email){
           router.push('/')
